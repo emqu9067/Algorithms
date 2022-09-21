@@ -21,9 +21,12 @@ class Iteration1D:
 
     def root(self):
         if self.method=='bisection':
-            [self.pstar,self.info]=bisection(f,a,b,tol,Nmax)
-        elif self.method=='fixedpt':
-            [self.pstar,self.info]=fixedpt(f,p0,tol,Nmax)
+            [self.pstar,self.info]=bisection(self.f,self.a,self.b,self.tol,self.Nmax)
+            return self.pstar
+        elif self.method=='fixed':
+            [self.pstar,self.info]=fixedpt(self.f,self.p0,self.tol,self.Nmax)
+            return self.pstar
+        else: self.info="Method type not accepted"
 
 def bisection(f,a,b,tol,Nmax):
     '''
