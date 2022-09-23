@@ -60,7 +60,7 @@ def bisection(a,b,Nmax,tol):
         return [a,0]
 
 
-
+ 
 a=-2;b=4.5
 Nmax=100
 tol=10**-10
